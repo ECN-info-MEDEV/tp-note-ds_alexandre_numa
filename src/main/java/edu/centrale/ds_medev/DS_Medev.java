@@ -12,5 +12,6 @@ public class DS_Medev {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+        System.out.println("Test Sonar Cloud");
     }
 }
