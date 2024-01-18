@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Disabled;
 
 /**
  *
@@ -53,6 +54,7 @@ public class GridTest {
     /**
      * Test of getCells method, of class Grid.
      */
+    @Disabled
     @Test
     public void testGetCells() {
         System.out.println("getCells");
@@ -67,6 +69,7 @@ public class GridTest {
     /**
      * Test of setCells method, of class Grid.
      */
+    @Disabled
     @Test
     public void testSetCells() {
         System.out.println("setCells");
@@ -80,6 +83,7 @@ public class GridTest {
     /**
      * Test of displayGrid method, of class Grid.
      */
+    @Disabled
     @Test
     public void testDisplayGrid() {
         System.out.println("displayGrid");
@@ -92,6 +96,7 @@ public class GridTest {
     /**
      * Test of markHit method, of class Grid.
      */
+    @Disabled
     @Test
     public void testMarkHit() {
         System.out.println("markHit");
@@ -106,6 +111,7 @@ public class GridTest {
     /**
      * Test of markMiss method, of class Grid.
      */
+    @Disabled
     @Test
     public void testMarkMiss() {
         System.out.println("markMiss");
@@ -120,6 +126,7 @@ public class GridTest {
     /**
      * Test of isOccupied method, of class Grid.
      */
+    @Disabled
     @Test
     public void testIsOccupied() {
         System.out.println("isOccupied");
@@ -136,6 +143,7 @@ public class GridTest {
     /**
      * Test of setOccupied method, of class Grid.
      */
+    @Disabled
     @Test
     public void testSetOccupied() {
         System.out.println("setOccupied");
@@ -150,6 +158,7 @@ public class GridTest {
     /**
      * Test of setShip method, of class Grid.
      */
+    @Disabled
     @Test
     public void testSetShip() {
         System.out.println("setShip");

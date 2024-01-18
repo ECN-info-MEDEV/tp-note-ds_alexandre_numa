@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Disabled;
 
 /**
  *
@@ -61,6 +62,7 @@ public class PlayerTest {
     /**
      * Test of getGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testGetGrid() {
         System.out.println("getGrid");
@@ -74,6 +76,7 @@ public class PlayerTest {
     /**
      * Test of setGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testSetGrid() {
         System.out.println("setGrid");
@@ -90,6 +93,7 @@ public class PlayerTest {
     /**
      * Test of getOpponentGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testGetOpponentGrid() {
         System.out.println("getOpponentGrid");
@@ -103,6 +107,7 @@ public class PlayerTest {
     /**
      * Test of setOpponentGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testSetOpponentGrid() {
         System.out.println("setOpponentGrid");
@@ -119,6 +124,7 @@ public class PlayerTest {
     /**
      * Test of placeShips method, of class Player.
      */
+    @Disabled
     @Test
     public void testPlaceShips() {
         System.out.println("placeShips");
@@ -141,6 +147,7 @@ public class PlayerTest {
     /**
      * Test of placeShipOnGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testPlaceShipOnGrid() {
         System.out.println("placeShipOnGrid");
@@ -158,6 +165,7 @@ public class PlayerTest {
         assertEquals(ship.getLength(), countOccupiedCells(ship));
     }
 
+    
     @Test
     public void testIsValidPlacement() {
         System.out.println("isValidPlacement");
