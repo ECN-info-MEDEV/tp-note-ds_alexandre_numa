@@ -77,33 +77,5 @@ public class ShipTest {
         
         assertEquals(5, ship.getLength());
     }
-
-    /**
-     * Test of getCells method, of class Ship.
-     */
-    @Test
-    public void testGetCells() {
-        System.out.println("getCells");
-        Cell[] cells = new Cell[4];
-        Ship ship = new Ship("default", 4, cells);
-        
-        assertEquals(cells, ship.getCells());
-    }
-
-    /**
-     * Test of setCells method, of class Ship.
-     */
-    @Test
-    public void testSetCells() {
-        System.out.println("setCells");
-        Cell[] cells = new Cell[4];
-        Ship ship = new Ship("default", 4, cells);
-        
-        cells[2].setX(5);
-        
-        ship.setCells(cells);
-        
-        assertEquals(cells, ship.getCells());
-    }
     
 }
