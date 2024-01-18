@@ -4,16 +4,14 @@
  */
 package edu.centrale.ds_medev;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author alex4
+ * @author nunuc
  */
 public class CellTest {
     
@@ -27,13 +25,83 @@ public class CellTest {
     @AfterAll
     public static void tearDownClass() {
     }
-    
-    @BeforeEach
-    public void setUp() {
+
+    /**
+     * Test of isMiss method, of class Cell.
+     */
+    @Test
+    public void testIsMiss() {
+        System.out.println("isMiss");
+        Cell cell = new Cell(0,50);
+        
+        cell.setMiss(true);
+        
+        assertEquals(true, cell.isMiss());
     }
-    
-    @AfterEach
-    public void tearDown() {
+
+    /**
+     * Test of setMiss method, of class Cell.
+     */
+    @Test
+    public void testSetMiss() {
+        System.out.println("setMiss");
+        Cell cell = new Cell(0,50);
+        
+        cell.setMiss(false);
+        
+        assertEquals(false, cell.isMiss());
+    }
+
+    /**
+     * Test of isHit method, of class Cell.
+     */
+    @Test
+    public void testIsHit() {
+        System.out.println("isHit");
+        Cell cell = new Cell(0,50);
+        
+        cell.setHit(true);
+        
+        assertEquals(true, cell.isHit());
+    }
+
+    /**
+     * Test of setHit method, of class Cell.
+     */
+    @Test
+    public void testSetHit() {
+        System.out.println("setHit");
+        Cell cell = new Cell(0,50);
+        
+        cell.setHit(false);
+        
+        assertEquals(false, cell.isHit());
+    }
+
+    /**
+     * Test of isOccupied method, of class Cell.
+     */
+    @Test
+    public void testIsOccupied() {
+        System.out.println("isOccupied");
+        Cell cell = new Cell(0,50);
+        
+        cell.setOccupied(true);
+        
+        assertEquals(true, cell.isOccupied());
+    }
+
+    /**
+     * Test of setOccupied method, of class Cell.
+     */
+    @Test
+    public void testSetOccupied() {
+        System.out.println("setOccupied");
+        Cell cell = new Cell(0,50);
+        
+        cell.setOccupied(false);
+        
+        assertEquals(false, cell.isOccupied());
     }
 
     /**
@@ -45,8 +113,6 @@ public class CellTest {
         Cell cell = new Cell(0,50);
 
         assertEquals(0, cell.getX());
-        
-        
     }
 
     /**
@@ -85,5 +151,4 @@ public class CellTest {
 
         assertEquals(20,cell.getY());
     }
-    
 }
