@@ -27,6 +27,10 @@ public class Player {
         this.name = name;
         this.grid = grid;
         this.opponentGrid = opponentGrid;
+        carrier = new Ship("Carrier", 5, new Cell[5]);
+        battleship = new Ship("Battleship", 4, new Cell[4]);
+        destroyer = new Ship("Destroyer", 3, new Cell[3]);
+        
     }
 
     public String getName() {
@@ -85,12 +89,14 @@ public class Player {
                 if (direction == 0){
                     if (!isValidPlacement(x+i,y)){
                         validPlacement = false;
-                        System.out.println("La case (" + x + "," + y + ") est déja occupée ou hors limite");
+                        int temp = x+i;
+                        System.out.println("La case (" + temp + "," + y + ") est déja occupée ou hors limite");
                     }
                 } else {
                     if (!isValidPlacement(x,y+i)){
                         validPlacement = false;
-                        System.out.println("La case (" + x + "," + y + ") est déja occupée ou hors limite");
+                        int temp = y+i;
+                        System.out.println("La case (" + x + "," + temp + ") est déja occupée ou hors limite");
                     }
                 }
             }
@@ -98,12 +104,12 @@ public class Player {
             if (validPlacement) {
                 for (int j=0; j<ship.getLength(); j++){
                     if (direction == 0){
-                        grid.isOccupied(x+j, y);
+                        grid.setOccupied(x+j, y);
                         cells[j] = new Cell(x+j,y);
                         cells[j].setOccupied(true);
                         
                     } else {
-                        grid.isOccupied(x, y+j);
+                        grid.setOccupied(x, y+j);
                         cells[j] = new Cell(x,y+j);
                         cells[j].setOccupied(true);
                     }

@@ -16,5 +16,16 @@ public class DS_Medev {
         
         Grid grid = new Grid(5);
         grid.displayGrid();
+        
+        
+        Grid gridP1 = new Grid(5);
+        Grid gridP2 = new Grid(5);
+        
+        Player P1 = new Player("P1", gridP1, gridP2);
+        Player P2 = new Player("P2", gridP2, gridP1);
+        
+        P1.placeShips();
+        
+        
     }
 }
