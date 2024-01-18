@@ -15,13 +15,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CellTest {
     
+    /**
+     *
+     */
     public CellTest() {
     }
     
+    /**
+     *
+     */
     @BeforeAll
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterAll
     public static void tearDownClass() {
     }
