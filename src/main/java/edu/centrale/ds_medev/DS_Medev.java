@@ -10,6 +10,10 @@ package edu.centrale.ds_medev;
  */
 public class DS_Medev {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Hello World!");
         System.out.println("Test Sonar Cloud");
