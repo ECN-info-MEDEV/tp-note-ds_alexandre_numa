@@ -11,10 +11,40 @@ package edu.centrale.ds_medev;
 public class Cell {
     private int x;
     private int y;
+    private boolean occupied;
+    private boolean hit;
+    private boolean miss;
 
     public Cell(int x, int y) {
         this.x = x;
         this.y = y;
+        occupied = false;
+        hit = false;
+        miss = false;
+    }
+
+    public boolean isMiss() {
+        return miss;
+    }
+
+    public void setMiss(boolean miss) {
+        this.miss = miss;
+    }
+    
+    public boolean isHit() {
+        return hit;
+    }
+
+    public void setHit(boolean hit) {
+        this.hit = hit;
+    }
+
+    public boolean isOccupied() {
+        return occupied;
+    }
+
+    public void setOccupied(boolean occupied) {
+        this.occupied = occupied;
     }
 
     public int getX() {

@@ -12,6 +12,7 @@ public class Ship {
     private String type;
     private int length; 
     private Cell[] cells;
+    private boolean sunk;
 
     public Ship(String type, int length, Cell[] cells) {
         this.type = type;
@@ -42,5 +43,15 @@ public class Ship {
     public void setCells(Cell[] cells) {
         this.cells = cells;
     }
+
+    public boolean isSunk() {
+        return sunk;
+    }
+
+    public void setSunk(boolean sunk) {
+        this.sunk = sunk;
+    }
+    
+    
     
 }

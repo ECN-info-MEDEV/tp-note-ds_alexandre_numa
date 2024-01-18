@@ -5,6 +5,7 @@
 package edu.centrale.ds_medev;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Grid {
         cells = new Cell[size][size];
         for (int i=0; i<size; i++){
             for (int j=0; j<size; j++){
-                cells[i][j] = new Cell(i,i);
+                cells[i][j] = new Cell(i,j);
             }
         }
     }
@@ -49,6 +50,18 @@ public class Grid {
             display += "\n";
         }
         System.out.println(display);
+    }
+    
+    public void markHit(int x,int y){
+        cells[x][y].setHit(true);
+    }
+    
+    public void markMiss(int x, int y){
+        cells[x][y].setMiss(true);
+    }
+    
+    public boolean isOccupied(int x,int y){
+        return cells[x][y].isOccupied();
     }
     
 }
