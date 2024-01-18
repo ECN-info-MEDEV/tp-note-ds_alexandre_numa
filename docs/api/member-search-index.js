@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"edu.centrale.ds_medev","c":"DS_Medev","l":"DS_Medev()","u":"%3Cinit%3E()"},{"p":"edu.centrale.ds_medev","c":"DS_Medev","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();
