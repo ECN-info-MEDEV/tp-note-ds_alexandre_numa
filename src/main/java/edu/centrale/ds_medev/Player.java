@@ -56,6 +56,32 @@ public class Player {
     public void setOpponentGrid(Grid opponentGrid) {
         this.opponentGrid = opponentGrid;
     }
+
+    public Ship getCarrier() {
+        return carrier;
+    }
+
+    public void setCarrier(Ship carrier) {
+        this.carrier = carrier;
+    }
+
+    public Ship getBattleship() {
+        return battleship;
+    }
+
+    public void setBattleship(Ship battleship) {
+        this.battleship = battleship;
+    }
+
+    public Ship getDestroyer() {
+        return destroyer;
+    }
+
+    public void setDestroyer(Ship destroyer) {
+        this.destroyer = destroyer;
+    }
+    
+    
     
     public void placeShips() {
         
@@ -105,11 +131,14 @@ public class Player {
                 for (int j=0; j<ship.getLength(); j++){
                     if (direction == 0){
                         grid.setOccupied(x+j, y);
+                        grid.setShip(x+j, y, ship);
                         cells[j] = new Cell(x+j,y);
                         cells[j].setOccupied(true);
                         
+                        
                     } else {
                         grid.setOccupied(x, y+j);
+                        grid.setShip(x, y+j, ship);
                         cells[j] = new Cell(x,y+j);
                         cells[j].setOccupied(true);
                     }

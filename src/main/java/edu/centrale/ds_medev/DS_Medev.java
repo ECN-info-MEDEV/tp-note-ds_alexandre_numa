@@ -26,6 +26,8 @@ public class DS_Medev {
         
         P1.placeShips();
         
+        P1.getGrid().displayGrid();
+        
         
     }
 }

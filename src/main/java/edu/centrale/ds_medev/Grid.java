@@ -45,9 +45,25 @@ public class Grid {
         String display = "";
         for (Cell[] line : this.cells){
             for (Cell c: line){
+                if(c.isOccupied()){
+                    Ship ship = c.getShip();
+                    switch (ship.getType()){
+                        case "Carrier":
+                            display += "C";
+                            break;
+                        case "BattleShip":
+                            display += "B";
+                            break;
+                        case "Destroyer":
+                            display += "D";
+                            break;
+                    }
+                            
+                } else {
+                    display += ".";
+                }
                 
                 
-                display += ".";
             }
             display += "\n";
         }
@@ -69,6 +85,10 @@ public class Grid {
     public void setOccupied(int x, int y){
         cells[x][y].setOccupied(true);
         
+    }
+    
+    public void setShip(int x, int y, Ship ship){
+        cells[x][y].setShip(ship);
     }
     
 }

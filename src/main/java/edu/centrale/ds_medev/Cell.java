@@ -14,6 +14,7 @@ public class Cell {
     private boolean occupied;
     private boolean hit;
     private boolean miss;
+    private Ship ship;
 
     public Cell(int x, int y) {
         this.x = x;
@@ -21,6 +22,14 @@ public class Cell {
         occupied = false;
         hit = false;
         miss = false;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
     }
 
     public boolean isMiss() {
