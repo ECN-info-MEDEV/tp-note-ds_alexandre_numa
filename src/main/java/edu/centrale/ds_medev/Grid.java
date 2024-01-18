@@ -79,6 +79,10 @@ public class Grid {
         cells[x][y].setMiss(true);
     }
     
+    public boolean isHit(int x, int y){
+        return cells[x][y].isHit();
+    }
+    
     public boolean isOccupied(int x,int y){
         return cells[x][y].isOccupied();
     }
