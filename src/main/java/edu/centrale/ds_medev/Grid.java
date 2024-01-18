@@ -15,6 +15,10 @@ public class Grid {
     private int size;
     private Cell[][] cells;
 
+    /**
+     *
+     * @param size
+     */
     public Grid(int size) {
         this.size = size;
         cells = new Cell[size][size];
@@ -25,22 +29,41 @@ public class Grid {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     *
+     * @param size
+     */
     public void setSize(int size) {
         this.size = size;
     }
 
+    /**
+     *
+     * @return
+     */
     public Cell[][] getCells() {
         return cells;
     }
 
+    /**
+     *
+     * @param cells
+     */
     public void setCells(Cell[][] cells) {
         this.cells = cells;
     }
     
+    /**
+     *
+     */
     public void displayGrid(){
         String display = "";
         for (Cell[] line : this.cells){
@@ -75,27 +98,60 @@ public class Grid {
         System.out.println(display);
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     */
     public void markHit(int x,int y){
         cells[x][y].setHit(true);
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     */
     public void markMiss(int x, int y){
         cells[x][y].setMiss(true);
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean isHit(int x, int y){
         return cells[x][y].isHit();
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean isOccupied(int x,int y){
         return cells[x][y].isOccupied();
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     */
     public void setOccupied(int x, int y){
         cells[x][y].setOccupied(true);
         
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @param ship
+     */
     public void setShip(int x, int y, Ship ship){
         cells[x][y].setShip(ship);
     }

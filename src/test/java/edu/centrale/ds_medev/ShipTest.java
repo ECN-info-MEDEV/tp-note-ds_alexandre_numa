@@ -15,13 +15,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class ShipTest {
     
+    /**
+     *
+     */
     public ShipTest() {
     }
     
+    /**
+     *
+     */
     @BeforeAll
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterAll
     public static void tearDownClass() {
     }

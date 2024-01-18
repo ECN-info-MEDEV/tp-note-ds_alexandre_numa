@@ -16,9 +16,15 @@ import org.junit.jupiter.api.Disabled;
  */
 public class PlayerTest {
     
+    /**
+     *
+     */
     public PlayerTest() {
     }
     
+    /**
+     *
+     */
     @BeforeAll
     public static void setUpClass() {
         // Initialisation du joueur avec une grille fictive pour les tests
@@ -27,6 +33,9 @@ public class PlayerTest {
         Player player = new Player("Jean", grid, opponentGrid);
     }
     
+    /**
+     *
+     */
     @AfterAll
     public static void tearDownClass() {
     }
@@ -185,6 +194,7 @@ public class PlayerTest {
 //
 //        // Vous pouvez ajouter plus de cas de test en fonction de votre implémentation.
 //    }
+
     
 //    @Disabled
 //    private int countOccupiedCells(Ship ship) {

@@ -23,6 +23,12 @@ public class Player {
     private Ship battleship;
     private Ship destroyer;
 
+    /**
+     *
+     * @param name
+     * @param grid
+     * @param opponentGrid
+     */
     public Player(String name, Grid grid, Grid opponentGrid) {
         this.name = name;
         this.grid = grid;
@@ -33,56 +39,105 @@ public class Player {
         
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public Grid getGrid() {
         return grid;
     }
 
+    /**
+     *
+     * @param grid
+     */
     public void setGrid(Grid grid) {
         this.grid = grid;
     }
 
+    /**
+     *
+     * @return
+     */
     public Grid getOpponentGrid() {
         return opponentGrid;
     }
 
+    /**
+     *
+     * @param opponentGrid
+     */
     public void setOpponentGrid(Grid opponentGrid) {
         this.opponentGrid = opponentGrid;
     }
 
+    /**
+     *
+     * @return
+     */
     public Ship getCarrier() {
         return carrier;
     }
 
+    /**
+     *
+     * @param carrier
+     */
     public void setCarrier(Ship carrier) {
         this.carrier = carrier;
     }
 
+    /**
+     *
+     * @return
+     */
     public Ship getBattleship() {
         return battleship;
     }
 
+    /**
+     *
+     * @param battleship
+     */
     public void setBattleship(Ship battleship) {
         this.battleship = battleship;
     }
 
+    /**
+     *
+     * @return
+     */
     public Ship getDestroyer() {
         return destroyer;
     }
 
+    /**
+     *
+     * @param destroyer
+     */
     public void setDestroyer(Ship destroyer) {
         this.destroyer = destroyer;
     }
     
-    
-    
+    /**
+     *
+     */
     public void placeShips() {
         
         System.out.println(name + ", placez vos navires sur la grille.");
@@ -92,6 +147,10 @@ public class Player {
         placeShipOnGrid(destroyer);
     }
     
+    /**
+     *
+     * @param ship
+     */
     public void placeShipOnGrid(Ship ship) {
         System.out.println("Placez votre " + ship.getType() + " (taille " + ship.getLength() + "x1)");
 
@@ -154,6 +213,12 @@ public class Player {
             
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean isValidPlacement(int x, int y) {
         // Vérifier si la position est dans les limites de la grille
         if (x < 0 || x >= grid.getSize() || y < 0 || y >= grid.getSize()) {
@@ -168,6 +233,9 @@ public class Player {
         return true;
     }
     
+    /**
+     *
+     */
     public void takeTurn(){
         System.out.println("Choisir la case à attquer :");
 
@@ -211,6 +279,11 @@ public class Player {
          
     }
     
+    /**
+     *
+     * @param opponent
+     * @return
+     */
     public boolean hasWon(Player opponent){
         return opponent.carrier.isSunk() && opponent.battleship.isSunk() && opponent.destroyer.isSunk();
         
