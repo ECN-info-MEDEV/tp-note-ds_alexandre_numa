@@ -31,7 +31,7 @@
         <echo message="Creating Jar..."/>
         <jar destfile="./app.jar" basedir="${classes.location}">
             <manifest>
-            <attribute name="DS_Medev" value="edu.centrale.ds_medev.DS_Medev"/>
+            <attribute name="Main-Class" value="edu.centrale.ds_medev.DS_Medev"/>
             </manifest>
         </jar>
         <echo message="Jar created"/>
