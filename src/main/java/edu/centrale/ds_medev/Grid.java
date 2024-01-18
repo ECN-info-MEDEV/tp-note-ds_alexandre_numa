@@ -62,6 +62,10 @@ public class Grid {
                             break;
                     }
                             
+                } else if (c.isMiss()){
+                    display += "o";
+                } else if (c.isHit()){
+                    display += "x";
                 } else {
                     display += ".";
                 }  

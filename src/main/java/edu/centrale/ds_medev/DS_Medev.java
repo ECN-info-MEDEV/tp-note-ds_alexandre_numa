@@ -25,8 +25,24 @@ public class DS_Medev {
         Player P2 = new Player("P2", gridP2, gridP1);
         
         P1.placeShips();
+        P2.placeShips();
         
         P1.getGrid().displayGrid();
+        
+        boolean gameOn = true;
+        
+        while(gameOn){
+            P1.takeTurn();
+            if (P1.hasWon(P2)){
+                gameOn = false;
+                break;
+            }
+            P2.takeTurn();
+            if (P2.hasWon(P1)){
+                gameOn = false;
+                break;
+            }
+        }
         
         
     }

@@ -208,7 +208,11 @@ public class Player {
             System.out.println("Raté ! Il n'y a rien sur cette case");
             opponentGrid.markMiss(x, y);
         }
-        
+         
+    }
+    
+    public boolean hasWon(Player opponent){
+        return opponent.carrier.isSunk() && opponent.battleship.isSunk() && opponent.destroyer.isSunk();
         
     }
     
