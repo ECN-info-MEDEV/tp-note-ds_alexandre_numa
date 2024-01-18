@@ -100,16 +100,20 @@ public class Player {
         boolean validPlacement = false;
         
         Cell[] cells = new Cell[ship.getLength()];
+        
+        int x = 0;
+        int y = 0;
+        int direction = 0;
 
         while (!validPlacement) {
             validPlacement = true;
             System.out.print("Entrez la position (ligne et colonne): ");
-            int x = scanner.nextInt();
-            int y = scanner.nextInt();
+            x = scanner.nextInt();
+            y = scanner.nextInt();
 
             System.out.print("Choissir la direction :\n0: Vertical (vers le bas)\n1: Horizontal (vers la droite)");
 
-            int direction = scanner.nextInt();
+            direction = scanner.nextInt();
 
             for (int i=0; i<ship.getLength(); i++){
                 if (direction == 0){
@@ -127,26 +131,27 @@ public class Player {
                 }
             }
             
-            if (validPlacement) {
-                for (int j=0; j<ship.getLength(); j++){
-                    if (direction == 0){
-                        grid.setOccupied(x+j, y);
-                        grid.setShip(x+j, y, ship);
-                        cells[j] = new Cell(x+j,y);
-                        cells[j].setOccupied(true);
-                        
-                        
-                    } else {
-                        grid.setOccupied(x, y+j);
-                        grid.setShip(x, y+j, ship);
-                        cells[j] = new Cell(x,y+j);
-                        cells[j].setOccupied(true);
-                    }
-                }
-                
-                ship.setCells(cells);
-            } 
+            
         }
+       
+        for (int j=0; j<ship.getLength(); j++){
+            if (direction == 0){
+                grid.setOccupied(x+j, y);
+                grid.setShip(x+j, y, ship);
+                cells[j] = new Cell(x+j,y);
+                cells[j].setOccupied(true);
+
+
+            } else {
+                grid.setOccupied(x, y+j);
+                grid.setShip(x, y+j, ship);
+                cells[j] = new Cell(x,y+j);
+                cells[j].setOccupied(true);
+            }
+        }
+
+        ship.setCells(cells);
+            
     }
     
     public boolean isValidPlacement(int x, int y) {
