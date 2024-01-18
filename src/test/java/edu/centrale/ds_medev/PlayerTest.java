@@ -20,6 +20,10 @@ public class PlayerTest {
     
     @BeforeAll
     public static void setUpClass() {
+        // Initialisation du joueur avec une grille fictive pour les tests
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid);
     }
     
     @AfterAll
@@ -32,7 +36,9 @@ public class PlayerTest {
     @Test
     public void testGetName() {
         System.out.println("getName");
-        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid);
         
         assertEquals("Jean", player.getName());        
     }
@@ -43,7 +49,9 @@ public class PlayerTest {
     @Test
     public void testSetName() {
         System.out.println("setName");
-        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid);
         
         player.setName("Pierre");
         
@@ -56,9 +64,9 @@ public class PlayerTest {
     @Test
     public void testGetGrid() {
         System.out.println("getGrid");
-        Player player = new Player("Jean", new Grid(5), new Grid(5));
-        
-        Grid grid = new Grid(5);
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid);
         
         assertEquals(grid, player.getGrid()); 
     }
@@ -69,12 +77,14 @@ public class PlayerTest {
     @Test
     public void testSetGrid() {
         System.out.println("setGrid");
-        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid);
         
-        Grid grid = new Grid(4);
-        player.setGrid(grid);
+        Grid grid1 = new Grid(4);
+        player.setGrid(grid1);
         
-        assertEquals(grid, player.getGrid()); 
+        assertEquals(grid1, player.getGrid()); 
     }
 
     /**
@@ -83,9 +93,9 @@ public class PlayerTest {
     @Test
     public void testGetOpponentGrid() {
         System.out.println("getOpponentGrid");
-        Player player = new Player("Jean", new Grid(5), new Grid(5));
-        
-        Grid grid = new Grid(5);
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid);
         
         assertEquals(grid, player.getOpponentGrid()); 
     }
@@ -96,12 +106,14 @@ public class PlayerTest {
     @Test
     public void testSetOpponentGrid() {
         System.out.println("setOpponentGrid");
-        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid); 
         
-        Grid grid = new Grid(4);
-        player.setOpponentGrid(grid);
+        Grid grid1 = new Grid(4);
+        player.setOpponentGrid(grid1);
         
-        assertEquals(grid, player.getOpponentGrid()); 
+        assertEquals(grid1, player.getOpponentGrid()); 
     }
 
     /**
@@ -109,11 +121,21 @@ public class PlayerTest {
      */
     @Test
     public void testPlaceShips() {
-        // Vérifier que les navires sont correctement placés
+        System.out.println("placeShips");
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid); 
+        
         player.placeShips();
 
-        // Ajoutez ici des assertions pour vérifier que les navires sont correctement placés sur la grille.
-        // Par exemple, vous pouvez vérifier que les cellules occupées correspondent à la taille des navires.
+        assertNotNull(player.getCarrier().getCells());
+        assertNotNull(player.getBattleship().getCells());
+        assertNotNull(player.getDestroyer().getCells());
+
+        // Vérifier que les cellules occupées correspondent à la taille des navires
+        assertEquals(player.getCarrier().getLength(), countOccupiedCells(player.getCarrier()));
+        assertEquals(player.getBattleship().getLength(), countOccupiedCells(player.getBattleship()));
+        assertEquals(player.getDestroyer().getLength(), countOccupiedCells(player.getDestroyer()));
     }
 
     /**
@@ -121,25 +143,44 @@ public class PlayerTest {
      */
     @Test
     public void testPlaceShipOnGrid() {
-        // Créez un navire fictif pour les tests
+        System.out.println("placeShipOnGrid");
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid); 
         Ship ship = new Ship("TestShip", 3, new Cell[3]);
 
-        // Appelez la méthode pour placer le navire sur la grille
-        Player.placeShipOnGrid(ship);
+        player.placeShipOnGrid(ship);
 
-        // Ajoutez ici des assertions pour vérifier que le navire est correctement placé sur la grille.
-        // Par exemple, vérifiez que les cellules occupées correspondent à la taille du navire.
+        // Vérifier que le navire a été placé sur la grille du joueur
+        assertNotNull(ship.getCells());
+
+        // Vérifier que les cellules occupées correspondent à la taille du navire
+        assertEquals(ship.getLength(), countOccupiedCells(ship));
     }
 
     @Test
     public void testIsValidPlacement() {
-        // Testez la méthode avec différentes positions valides et invalides
+        System.out.println("isValidPlacement");
+        Grid grid = new Grid(5); 
+        Grid opponentGrid = new Grid(5);
+        Player player = new Player("Jean", grid, opponentGrid);     
+        
         assertTrue(player.isValidPlacement(0, 0));
-        assertTrue(player.isValidPlacement(5, 5));
+        assertTrue(player.isValidPlacement(1, 4));
         assertFalse(player.isValidPlacement(-1, 0));
         assertFalse(player.isValidPlacement(11, 5));
 
         // Vous pouvez ajouter plus de cas de test en fonction de votre implémentation.
     }
     
+    private int countOccupiedCells(Ship ship) {
+        int count = 0;
+        for (Cell cell : ship.getCells()) {
+            if (cell.isOccupied()) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
+
