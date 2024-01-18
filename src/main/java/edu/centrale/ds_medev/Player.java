@@ -107,7 +107,7 @@ public class Player {
             int x = scanner.nextInt();
             int y = scanner.nextInt();
 
-            System.out.print("Choissir la direction :\n0: Horizontal (vers la droite)\n1: Vertical (vers le bas)");
+            System.out.print("Choissir la direction :\n0: Vertical (vers le bas)\n1: Horizontal (vers la droite)");
 
             int direction = scanner.nextInt();
 
