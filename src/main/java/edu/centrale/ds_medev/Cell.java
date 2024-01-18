@@ -5,10 +5,13 @@
 package edu.centrale.ds_medev;
 
 /**
- *
+ * Classe Cellule qui correspond à une case du plateau de jeu
+ * 
  * @author alex4
  */
 public class Cell {
+    
+    // Attributs
     private int x;
     private int y;
     private boolean occupied;
@@ -16,10 +19,11 @@ public class Cell {
     private boolean miss;
     private Ship ship;
 
+    // Constructeurs
     /**
-     *
-     * @param x
-     * @param y
+     * Constructeur d'une cellule prédéfinie
+     * @param x la position horizontale
+     * @param y la position verticale
      */
     public Cell(int x, int y) {
         this.x = x;
@@ -29,9 +33,10 @@ public class Cell {
         miss = false;
     }
 
+    // Getters and Setters 
     /**
-     *
-     * @return
+     * 
+     * @return le bateau sur la cellule
      */
     public Ship getShip() {
         return ship;
@@ -39,7 +44,7 @@ public class Cell {
 
     /**
      *
-     * @param ship
+     * @param ship le bateau placé sur la cellule
      */
     public void setShip(Ship ship) {
         this.ship = ship;
@@ -47,7 +52,7 @@ public class Cell {
 
     /**
      *
-     * @return
+     * @return si la cellule à reçu une attaque mais aucun bateau ne s'y trouvait
      */
     public boolean isMiss() {
         return miss;
@@ -55,7 +60,7 @@ public class Cell {
 
     /**
      *
-     * @param miss
+     * @param miss le booléen qui indique que la cellule à reçu une attaque mais aucun bateau ne s'y trouvait
      */
     public void setMiss(boolean miss) {
         this.miss = miss;
@@ -63,7 +68,7 @@ public class Cell {
     
     /**
      *
-     * @return
+     * @return si la cellule à reçu une attaque et qu'un bateau s'y trouvait
      */
     public boolean isHit() {
         return hit;
@@ -71,7 +76,7 @@ public class Cell {
 
     /**
      *
-     * @param hit
+     * @param hit le booléen qui indique que la cellule à reçu une attaque et qu'un bateau s'y trouvait
      */
     public void setHit(boolean hit) {
         this.hit = hit;
@@ -79,7 +84,7 @@ public class Cell {
 
     /**
      *
-     * @return
+     * @return si la cellule est occupé par un bateau
      */
     public boolean isOccupied() {
         return occupied;
@@ -87,7 +92,7 @@ public class Cell {
 
     /**
      *
-     * @param occupied
+     * @param occupied le booléen qui indique que la cellule est occupé par un bateau
      */
     public void setOccupied(boolean occupied) {
         this.occupied = occupied;
@@ -95,7 +100,7 @@ public class Cell {
 
     /**
      *
-     * @return
+     * @return la position en x de la cellule
      */
     public int getX() {
         return x;
@@ -103,7 +108,7 @@ public class Cell {
 
     /**
      *
-     * @param x
+     * @param x la nouvelle en x position de la cellule 
      */
     public void setX(int x) {
         this.x = x;
@@ -111,7 +116,7 @@ public class Cell {
 
     /**
      *
-     * @return
+     * @return la position en y de la cellule
      */
     public int getY() {
         return y;
@@ -119,7 +124,7 @@ public class Cell {
 
     /**
      *
-     * @param y
+     * @param y la nouvelle en y position de la cellule 
      */
     public void setY(int y) {
         this.y = y;
