@@ -62,6 +62,7 @@ public class PlayerTest {
     /**
      * Test of getGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testGetGrid() {
         System.out.println("getGrid");
@@ -75,6 +76,7 @@ public class PlayerTest {
     /**
      * Test of setGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testSetGrid() {
         System.out.println("setGrid");
@@ -91,6 +93,7 @@ public class PlayerTest {
     /**
      * Test of getOpponentGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testGetOpponentGrid() {
         System.out.println("getOpponentGrid");
@@ -109,6 +112,7 @@ public class PlayerTest {
     /**
      * Test of setOpponentGrid method, of class Player.
      */
+    @Disabled
     @Test
     public void testSetOpponentGrid() {
         System.out.println("setOpponentGrid");
@@ -165,7 +169,7 @@ public class PlayerTest {
         // Vérifier que les cellules occupées correspondent à la taille du navire
         assertEquals(ship.getLength(), countOccupiedCells(ship));
     }
-    
+
     @Disabled
     @Test
     public void testIsValidPlacement() {

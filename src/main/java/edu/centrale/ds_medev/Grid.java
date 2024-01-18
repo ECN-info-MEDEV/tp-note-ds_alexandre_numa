@@ -62,6 +62,10 @@ public class Grid {
                             break;
                     }
                             
+                } else if (c.isMiss()){
+                    display += "o";
+                } else if (c.isHit()){
+                    display += "x";
                 } else {
                     display += ".";
                 }  
@@ -77,6 +81,10 @@ public class Grid {
     
     public void markMiss(int x, int y){
         cells[x][y].setMiss(true);
+    }
+    
+    public boolean isHit(int x, int y){
+        return cells[x][y].isHit();
     }
     
     public boolean isOccupied(int x,int y){

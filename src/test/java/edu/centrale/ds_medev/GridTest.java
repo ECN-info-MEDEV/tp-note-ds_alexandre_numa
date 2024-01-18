@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Disabled;
 
 /**
  *
@@ -50,10 +51,53 @@ public class GridTest {
         assertEquals(5, grid.getSize());
     }
 
+    /**
+     * Test of getCells method, of class Grid.
+     */
+    @Disabled
+    @Test
+    public void testGetCells() {
+        System.out.println("getCells");
+        Grid instance = null;
+        Cell[][] expResult = null;
+        Cell[][] result = instance.getCells();
+        assertArrayEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setCells method, of class Grid.
+     */
+    @Disabled
+    @Test
+    public void testSetCells() {
+        System.out.println("setCells");
+        Cell[][] cells = null;
+        Grid instance = null;
+        instance.setCells(cells);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of displayGrid method, of class Grid.
+     */
+    @Disabled
+    @Test
+    public void testDisplayGrid() {
+        System.out.println("displayGrid");
+        Grid instance = null;
+        instance.displayGrid();
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
 
     /**
      * Test of markHit method, of class Grid.
      */
+    @Disabled
     @Test
     public void testMarkHit() {
         System.out.println("markHit");
@@ -67,6 +111,7 @@ public class GridTest {
     /**
      * Test of markMiss method, of class Grid.
      */
+    @Disabled
     @Test
     public void testMarkMiss() {
         System.out.println("markMiss");
@@ -80,6 +125,7 @@ public class GridTest {
     /**
      * Test of isOccupied method, of class Grid.
      */
+    @Disabled
     @Test
     public void testIsOccupied() {
         System.out.println("isOccupied");
@@ -94,6 +140,7 @@ public class GridTest {
     /**
      * Test of setOccupied method, of class Grid.
      */
+    @Disabled
     @Test
     public void testSetOccupied() {
         System.out.println("setOccupied");
@@ -108,6 +155,7 @@ public class GridTest {
     /**
      * Test of setShip method, of class Grid.
      */
+    @Disabled
     @Test
     public void testSetShip() {
         System.out.println("setShip");

@@ -168,5 +168,52 @@ public class Player {
         return true;
     }
     
+    public void takeTurn(){
+        System.out.println("Choisir la case à attquer :");
+
+        Scanner scanner = new Scanner(System.in);
+        
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        
+        if (grid.isOccupied(x, y)){
+            if (opponentGrid.isHit(x, y)){
+                System.out.println("Raté ! Cette casse était déjà touchée");
+            } else {
+                System.out.println("Bravo ! Vous avez touché un bateau");
+                opponentGrid.markHit(x, y);
+                Ship ship = opponentGrid.getCells()[x][y].getShip();
+                boolean sunk = true;
+                for (Cell c: ship.getCells()){
+                    if (!c.isHit()){
+                        sunk = false;
+                    }
+                }
+                if (sunk){
+                    switch (ship.getType()){
+                        case "Carrier":
+                            carrier.setSunk(true);
+                            break;
+                        case "Battleship":
+                            battleship.setSunk(true);
+                            break;
+                        case "Destroyer":
+                            destroyer.setSunk(true);
+                            break;
+                    }
+                }
+            }
+           
+        } else {
+            System.out.println("Raté ! Il n'y a rien sur cette case");
+            opponentGrid.markMiss(x, y);
+        }
+         
+    }
+    
+    public boolean hasWon(Player opponent){
+        return opponent.carrier.isSunk() && opponent.battleship.isSunk() && opponent.destroyer.isSunk();
+        
+    }
     
 }
