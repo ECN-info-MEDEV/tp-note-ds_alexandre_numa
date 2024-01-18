@@ -4,6 +4,8 @@
  */
 package edu.centrale.ds_medev;
 
+import java.util.Set;
+
 
 /**
  *
@@ -60,6 +62,11 @@ public class Grid {
     
     public boolean isOccupied(int x,int y){
         return cells[x][y].isOccupied();
+    }
+    
+    public void setOccupied(int x, int y){
+        cells[x][y].setOccupied(true);
+        
     }
     
 }
