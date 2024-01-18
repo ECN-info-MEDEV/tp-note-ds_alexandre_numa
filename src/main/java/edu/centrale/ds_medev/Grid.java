@@ -51,19 +51,20 @@ public class Grid {
                         case "Carrier":
                             display += "C";
                             break;
-                        case "BattleShip":
+                        case "Battleship":
                             display += "B";
                             break;
                         case "Destroyer":
                             display += "D";
                             break;
+                        default:
+                            display += ".";
+                            break;
                     }
                             
                 } else {
                     display += ".";
-                }
-                
-                
+                }  
             }
             display += "\n";
         }
