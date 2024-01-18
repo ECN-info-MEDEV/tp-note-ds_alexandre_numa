@@ -4,8 +4,6 @@
  */
 package edu.centrale.ds_medev;
 
-import java.util.Arrays;
-import java.util.HashSet;
 
 /**
  *
