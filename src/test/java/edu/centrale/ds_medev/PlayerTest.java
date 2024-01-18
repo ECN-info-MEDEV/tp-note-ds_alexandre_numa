@@ -32,12 +32,9 @@ public class PlayerTest {
     @Test
     public void testGetName() {
         System.out.println("getName");
-        Player instance = null;
-        String expResult = "";
-        String result = instance.getName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        
+        assertEquals("Jean", player.getName());        
     }
 
     /**
@@ -46,11 +43,11 @@ public class PlayerTest {
     @Test
     public void testSetName() {
         System.out.println("setName");
-        String name = "";
-        Player instance = null;
-        instance.setName(name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        
+        player.setName("Pierre");
+        
+        assertEquals("Pierre", player.getName());  
     }
 
     /**
@@ -59,12 +56,11 @@ public class PlayerTest {
     @Test
     public void testGetGrid() {
         System.out.println("getGrid");
-        Player instance = null;
-        Grid expResult = null;
-        Grid result = instance.getGrid();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        
+        Grid grid = new Grid(5);
+        
+        assertEquals(grid, player.getGrid()); 
     }
 
     /**
@@ -73,11 +69,12 @@ public class PlayerTest {
     @Test
     public void testSetGrid() {
         System.out.println("setGrid");
-        Grid grid = null;
-        Player instance = null;
-        instance.setGrid(grid);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        
+        Grid grid = new Grid(4);
+        player.setGrid(grid);
+        
+        assertEquals(grid, player.getGrid()); 
     }
 
     /**
@@ -86,12 +83,11 @@ public class PlayerTest {
     @Test
     public void testGetOpponentGrid() {
         System.out.println("getOpponentGrid");
-        Player instance = null;
-        Grid expResult = null;
-        Grid result = instance.getOpponentGrid();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        
+        Grid grid = new Grid(5);
+        
+        assertEquals(grid, player.getOpponentGrid()); 
     }
 
     /**
@@ -100,11 +96,12 @@ public class PlayerTest {
     @Test
     public void testSetOpponentGrid() {
         System.out.println("setOpponentGrid");
-        Grid opponentGrid = null;
-        Player instance = null;
-        instance.setOpponentGrid(opponentGrid);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Player player = new Player("Jean", new Grid(5), new Grid(5));
+        
+        Grid grid = new Grid(4);
+        player.setOpponentGrid(grid);
+        
+        assertEquals(grid, player.getOpponentGrid()); 
     }
 
     /**
@@ -112,11 +109,37 @@ public class PlayerTest {
      */
     @Test
     public void testPlaceShips() {
-        System.out.println("placeShips");
-        Player instance = null;
-        instance.placeShips();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // Vérifier que les navires sont correctement placés
+        player.placeShips();
+
+        // Ajoutez ici des assertions pour vérifier que les navires sont correctement placés sur la grille.
+        // Par exemple, vous pouvez vérifier que les cellules occupées correspondent à la taille des navires.
+    }
+
+    /**
+     * Test of placeShipOnGrid method, of class Player.
+     */
+    @Test
+    public void testPlaceShipOnGrid() {
+        // Créez un navire fictif pour les tests
+        Ship ship = new Ship("TestShip", 3, new Cell[3]);
+
+        // Appelez la méthode pour placer le navire sur la grille
+        Player.placeShipOnGrid(ship);
+
+        // Ajoutez ici des assertions pour vérifier que le navire est correctement placé sur la grille.
+        // Par exemple, vérifiez que les cellules occupées correspondent à la taille du navire.
+    }
+
+    @Test
+    public void testIsValidPlacement() {
+        // Testez la méthode avec différentes positions valides et invalides
+        assertTrue(player.isValidPlacement(0, 0));
+        assertTrue(player.isValidPlacement(5, 5));
+        assertFalse(player.isValidPlacement(-1, 0));
+        assertFalse(player.isValidPlacement(11, 5));
+
+        // Vous pouvez ajouter plus de cas de test en fonction de votre implémentation.
     }
     
 }

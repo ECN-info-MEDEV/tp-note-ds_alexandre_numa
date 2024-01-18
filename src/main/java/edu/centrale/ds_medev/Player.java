@@ -66,7 +66,7 @@ public class Player {
         placeShipOnGrid(destroyer);
     }
     
-    private void placeShipOnGrid(Ship ship) {
+    public void placeShipOnGrid(Ship ship) {
         System.out.println("Placez votre " + ship.getType() + " (taille " + ship.getLength() + "x1)");
 
         Scanner scanner = new Scanner(System.in);
@@ -120,7 +120,7 @@ public class Player {
         }
     }
     
-    private boolean isValidPlacement(int x, int y) {
+    public boolean isValidPlacement(int x, int y) {
         // Vérifier si la position est dans les limites de la grille
         if (x < 0 || x >= grid.getSize() || y < 0 || y >= grid.getSize()) {
             return false;
