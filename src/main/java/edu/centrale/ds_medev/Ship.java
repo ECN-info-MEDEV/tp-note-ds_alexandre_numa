@@ -5,20 +5,23 @@
 package edu.centrale.ds_medev;
 
 /**
- *
+ * Classe Bateau 
  * @author alex4
  */
 public class Ship {
+    
+    // Attributs 
     private String type;
     private int length; 
     private Cell[] cells;
     private boolean sunk;
 
+    // Constructeurs 
     /**
      *
-     * @param type
-     * @param length
-     * @param cells
+     * @param type Type de bateau (porte avion, cuirassé ou destroyer)
+     * @param length taille du bateau
+     * @param cells tableau des cellules occupé par le bateau
      */
     public Ship(String type, int length, Cell[] cells) {
         this.type = type;
@@ -26,9 +29,10 @@ public class Ship {
         this.cells = cells;
     }
 
+    // Getters and Setters 
     /**
      *
-     * @return
+     * @return le type du bateau
      */
     public String getType() {
         return type;
@@ -36,7 +40,7 @@ public class Ship {
 
     /**
      *
-     * @param type
+     * @param type le nouveau type du bateau
      */
     public void setType(String type) {
         this.type = type;
@@ -44,7 +48,7 @@ public class Ship {
 
     /**
      *
-     * @return
+     * @return la taille du bateau
      */
     public int getLength() {
         return length;
@@ -52,7 +56,7 @@ public class Ship {
 
     /**
      *
-     * @param length
+     * @param length la nouvelle taille du bateau
      */
     public void setLength(int length) {
         this.length = length;
@@ -60,7 +64,7 @@ public class Ship {
 
     /**
      *
-     * @return
+     * @return le tableau des cellules occupées par le bateau
      */
     public Cell[] getCells() {
         return cells;
@@ -68,7 +72,7 @@ public class Ship {
 
     /**
      *
-     * @param cells
+     * @param cells le nouveau tableau des cellules occupées par le bateau
      */
     public void setCells(Cell[] cells) {
         this.cells = cells;
@@ -76,7 +80,7 @@ public class Ship {
 
     /**
      *
-     * @return
+     * @return si le bateau a coulé 
      */
     public boolean isSunk() {
         return sunk;
@@ -84,12 +88,12 @@ public class Ship {
 
     /**
      *
-     * @param sunk
+     * @param sunk indique si le bateau a coulé 
      */
     public void setSunk(boolean sunk) {
         this.sunk = sunk;
     }
     
-    
+
     
 }
