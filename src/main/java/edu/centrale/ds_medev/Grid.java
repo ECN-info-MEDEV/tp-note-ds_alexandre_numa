@@ -8,16 +8,19 @@ import java.util.Set;
 
 
 /**
- *
+ * Grille carré de cellules : plateau de jeu 
  * @author alex4
  */
 public class Grid {
+    
+    // Attributs
     private int size;
     private Cell[][] cells;
 
+    // Constructeurs
     /**
-     *
-     * @param size
+     * Constructeur d'une grille à la taille prédéfinie
+     * @param size taille de la grille 
      */
     public Grid(int size) {
         this.size = size;
@@ -29,9 +32,10 @@ public class Grid {
         }
     }
 
+    // Getters and Setters 
     /**
-     *
-     * @return
+     * 
+     * @return la taille de la grille 
      */
     public int getSize() {
         return size;
@@ -39,7 +43,7 @@ public class Grid {
 
     /**
      *
-     * @param size
+     * @param size la nouvelle taille de la grille 
      */
     public void setSize(int size) {
         this.size = size;
@@ -47,7 +51,7 @@ public class Grid {
 
     /**
      *
-     * @return
+     * @return la matrice des cellules qui composent la grille 
      */
     public Cell[][] getCells() {
         return cells;
@@ -55,14 +59,16 @@ public class Grid {
 
     /**
      *
-     * @param cells
+     * @param cells la nouvelle matrice de cellule
      */
     public void setCells(Cell[][] cells) {
         this.cells = cells;
     }
     
+    // Méthodes
+    
     /**
-     *
+     * Méthode d'affichage de la grille avec les bateaux et les Hit et Miss
      */
     public void displayGrid(){
         String display = "";
@@ -99,7 +105,7 @@ public class Grid {
     }
     
     /**
-     *
+     * Marquage de la grille si le tir en (x, y) a manqué la cible
      * @param x
      * @param y
      */
@@ -108,7 +114,7 @@ public class Grid {
     }
     
     /**
-     *
+     * Marquage de la grille si le tir en (x, y) a touché la cible
      * @param x
      * @param y
      */
@@ -117,10 +123,10 @@ public class Grid {
     }
     
     /**
-     *
+     * 
      * @param x
      * @param y
-     * @return
+     * @return si le tir en (x, y) a touché la cible 
      */
     public boolean isHit(int x, int y){
         return cells[x][y].isHit();
@@ -130,14 +136,14 @@ public class Grid {
      *
      * @param x
      * @param y
-     * @return
+     * @return si la cellule en (x, y) est occupé
      */
     public boolean isOccupied(int x,int y){
         return cells[x][y].isOccupied();
     }
     
     /**
-     *
+     * Ajout d'un indicateur (Occupied) sur la grille en (x, y)
      * @param x
      * @param y
      */
@@ -147,10 +153,10 @@ public class Grid {
     }
     
     /**
-     *
+     * Ajout d'un bateau sur la grille en (x, y)
      * @param x
      * @param y
-     * @param ship
+     * @param ship 
      */
     public void setShip(int x, int y, Ship ship){
         cells[x][y].setShip(ship);

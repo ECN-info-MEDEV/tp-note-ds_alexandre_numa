@@ -10,11 +10,12 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
- *
+ * Classe Joueur
  * @author alex4
  */
 public class Player {
     
+    // Attributs
     private String name;
     private Grid grid;
     private Grid opponentGrid;
@@ -23,11 +24,12 @@ public class Player {
     private Ship battleship;
     private Ship destroyer;
 
+    // Constructeurs
     /**
      *
-     * @param name
-     * @param grid
-     * @param opponentGrid
+     * @param name nom du joueur
+     * @param grid grille du joueur
+     * @param opponentGrid grille adverse
      */
     public Player(String name, Grid grid, Grid opponentGrid) {
         this.name = name;
@@ -39,9 +41,10 @@ public class Player {
         
     }
 
+    // Getters and Setters 
     /**
      *
-     * @return
+     * @return le nom du joueur
      */
     public String getName() {
         return name;
@@ -49,7 +52,7 @@ public class Player {
 
     /**
      *
-     * @param name
+     * @param name le nouveau nom du joueur
      */
     public void setName(String name) {
         this.name = name;
@@ -57,7 +60,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return la grille du joueur
      */
     public Grid getGrid() {
         return grid;
@@ -65,7 +68,7 @@ public class Player {
 
     /**
      *
-     * @param grid
+     * @param grid la nouvelle grille du joueur
      */
     public void setGrid(Grid grid) {
         this.grid = grid;
@@ -73,7 +76,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return la grille adverse
      */
     public Grid getOpponentGrid() {
         return opponentGrid;
@@ -81,7 +84,7 @@ public class Player {
 
     /**
      *
-     * @param opponentGrid
+     * @param opponentGrid la nouvelle grille adverse
      */
     public void setOpponentGrid(Grid opponentGrid) {
         this.opponentGrid = opponentGrid;
@@ -89,7 +92,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return le porte avion
      */
     public Ship getCarrier() {
         return carrier;
@@ -97,7 +100,7 @@ public class Player {
 
     /**
      *
-     * @param carrier
+     * @param carrier le nouveau porte avion
      */
     public void setCarrier(Ship carrier) {
         this.carrier = carrier;
@@ -105,7 +108,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return le cuirassé 
      */
     public Ship getBattleship() {
         return battleship;
@@ -113,7 +116,7 @@ public class Player {
 
     /**
      *
-     * @param battleship
+     * @param battleship le nouveau cuirassé
      */
     public void setBattleship(Ship battleship) {
         this.battleship = battleship;
@@ -121,7 +124,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return le destroyer
      */
     public Ship getDestroyer() {
         return destroyer;
@@ -129,14 +132,16 @@ public class Player {
 
     /**
      *
-     * @param destroyer
+     * @param destroyer le nouveau destroyer
      */
     public void setDestroyer(Ship destroyer) {
         this.destroyer = destroyer;
     }
     
+    // Méthodes
+    
     /**
-     *
+     * Ajout des bateaux du joueur sur sa grille 
      */
     public void placeShips() {
         
@@ -148,8 +153,8 @@ public class Player {
     }
     
     /**
-     *
-     * @param ship
+     * Ajour d'un bateau sur la grille 
+     * @param ship le bateau a rajouté 
      */
     public void placeShipOnGrid(Ship ship) {
         System.out.println("Placez votre " + ship.getType() + " (taille " + ship.getLength() + "x1)");
@@ -214,10 +219,10 @@ public class Player {
     }
     
     /**
-     *
-     * @param x
+     * Test si le placement en (x, y) est valide
+     * @param x 
      * @param y
-     * @return
+     * @return si le placement est valide
      */
     public boolean isValidPlacement(int x, int y) {
         // Vérifier si la position est dans les limites de la grille
@@ -234,7 +239,7 @@ public class Player {
     }
     
     /**
-     *
+     * Méthode d'un tour de jeu
      */
     public void takeTurn(){
         System.out.println("Choisir la case à attquer :");
@@ -280,9 +285,9 @@ public class Player {
     }
     
     /**
-     *
-     * @param opponent
-     * @return
+     * Méthode test de fin de partie 
+     * @param opponent joueur adverse
+     * @return si le joueur a gagné
      */
     public boolean hasWon(Player opponent){
         return opponent.carrier.isSunk() && opponent.battleship.isSunk() && opponent.destroyer.isSunk();
