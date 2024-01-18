@@ -15,12 +15,7 @@ public class DS_Medev {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Test Sonar Cloud");
-        
-        Grid grid = new Grid(5);
-        grid.displayGrid();
-        
+
         
         Grid gridP1 = new Grid(5);
         Grid gridP2 = new Grid(5);
@@ -36,11 +31,13 @@ public class DS_Medev {
         boolean gameEnd = false;
         
         while(!gameEnd){
+            System.out.println("Au tour du Joueur 1");
             P1.takeTurn();
             if (P1.hasWon(P2)){
                 gameEnd = true;
                 break;
             }
+            System.out.println("Au tour du Joueur 2");
             P2.takeTurn();
             if (P2.hasWon(P1)){
                 gameEnd = true;

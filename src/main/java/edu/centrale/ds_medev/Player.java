@@ -242,6 +242,9 @@ public class Player {
      * Méthode d'un tour de jeu
      */
     public void takeTurn(){
+        System.out.println("---------------");
+        System.out.println("Voici votre grille :");
+        System.out.println("---------------");
         System.out.println("Choisir la case à attquer :");
 
         Scanner scanner = new Scanner(System.in);

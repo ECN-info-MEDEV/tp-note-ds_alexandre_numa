@@ -75,26 +75,28 @@ public class Grid {
         for (Cell[] line : this.cells){
             for (Cell c: line){
                 if(c.isOccupied()){
-                    Ship ship = c.getShip();
-                    switch (ship.getType()){
-                        case "Carrier":
-                            display += "C";
-                            break;
-                        case "Battleship":
-                            display += "B";
-                            break;
-                        case "Destroyer":
-                            display += "D";
-                            break;
-                        default:
-                            display += ".";
-                            break;
+                    if (c.isHit()){
+                        display += "x";
+                    } else {
+                        Ship ship = c.getShip();
+                        switch (ship.getType()){
+                            case "Carrier":
+                                display += "C";
+                                break;
+                            case "Battleship":
+                                display += "B";
+                                break;
+                            case "Destroyer":
+                                display += "D";
+                                break;
+                            default:
+                                display += ".";
+                                break;
+                        }
                     }
                             
                 } else if (c.isMiss()){
                     display += "o";
-                } else if (c.isHit()){
-                    display += "x";
                 } else {
                     display += ".";
                 }  
