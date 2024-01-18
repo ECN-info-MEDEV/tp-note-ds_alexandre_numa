@@ -33,17 +33,17 @@ public class DS_Medev {
         
         P1.getGrid().displayGrid();
         
-        boolean gameOn = true;
+        boolean gameEnd = false;
         
-        while(gameOn){
+        while(!gameEnd){
             P1.takeTurn();
             if (P1.hasWon(P2)){
-                gameOn = false;
+                gameEnd = true;
                 break;
             }
             P2.takeTurn();
             if (P2.hasWon(P1)){
-                gameOn = false;
+                gameEnd = true;
                 break;
             }
         }
