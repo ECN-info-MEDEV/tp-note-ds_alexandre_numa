@@ -45,6 +45,8 @@ public class Grid {
         String display = "";
         for (Cell[] line : this.cells){
             for (Cell c: line){
+                
+                
                 display += ".";
             }
             display += "\n";
