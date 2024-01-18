@@ -151,4 +151,32 @@ public class CellTest {
 
         assertEquals(20,cell.getY());
     }
+
+    /**
+     * Test of getShip method, of class Cell.
+     */
+    @Test
+    public void testGetShip() {
+        System.out.println("getShip");
+        Cell cell = new Cell(0,50);
+        
+        cell.setShip(new Ship("Ship", 4, new Cell[4])); 
+        
+        assertEquals("Ship",cell.getShip().getType());
+        assertEquals(4,cell.getShip().getLength());
+    }
+
+    /**
+     * Test of setShip method, of class Cell.
+     */
+    @Test
+    public void testSetShip() {
+        System.out.println("setShip");
+        Cell cell = new Cell(0,50);
+        
+        cell.setShip(new Ship("Ship", 4, new Cell[4])); 
+        
+        assertEquals("Ship",cell.getShip().getType());
+        assertEquals(4,cell.getShip().getLength());
+    }
 }

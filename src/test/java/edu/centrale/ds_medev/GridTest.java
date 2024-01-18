@@ -50,44 +50,6 @@ public class GridTest {
         assertEquals(5, grid.getSize());
     }
 
-    /**
-     * Test of getCells method, of class Grid.
-     */
-    @Test
-    public void testGetCells() {
-        System.out.println("getCells");
-        Grid instance = null;
-        Cell[][] expResult = null;
-        Cell[][] result = instance.getCells();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setCells method, of class Grid.
-     */
-    @Test
-    public void testSetCells() {
-        System.out.println("setCells");
-        Cell[][] cells = null;
-        Grid instance = null;
-        instance.setCells(cells);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of displayGrid method, of class Grid.
-     */
-    @Test
-    public void testDisplayGrid() {
-        System.out.println("displayGrid");
-        Grid instance = null;
-        instance.displayGrid();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of markHit method, of class Grid.
@@ -95,12 +57,11 @@ public class GridTest {
     @Test
     public void testMarkHit() {
         System.out.println("markHit");
-        int x = 0;
-        int y = 0;
-        Grid instance = null;
-        instance.markHit(x, y);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Grid grid = new Grid(5);
+
+        grid.markHit(1, 4);
+        Cell[][] cells = grid.getCells();
+        assertTrue((cells[1][4]).isHit());
     }
 
     /**
@@ -109,12 +70,11 @@ public class GridTest {
     @Test
     public void testMarkMiss() {
         System.out.println("markMiss");
-        int x = 0;
-        int y = 0;
-        Grid instance = null;
-        instance.markMiss(x, y);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Grid grid = new Grid(5);
+
+        grid.markMiss(1, 4);
+        Cell[][] cells = grid.getCells();
+        assertTrue((cells[1][4]).isMiss());
     }
 
     /**
@@ -123,14 +83,12 @@ public class GridTest {
     @Test
     public void testIsOccupied() {
         System.out.println("isOccupied");
-        int x = 0;
-        int y = 0;
-        Grid instance = null;
-        boolean expResult = false;
-        boolean result = instance.isOccupied(x, y);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Grid grid = new Grid(5);
+        
+        grid.getCells()[1][4].setOccupied(true);
+        grid.getCells()[4][1].setOccupied(false);
+        assertTrue(grid.getCells()[1][4].isOccupied());
+        assertFalse(grid.getCells()[4][1].isOccupied());
     }
 
     /**
@@ -139,12 +97,12 @@ public class GridTest {
     @Test
     public void testSetOccupied() {
         System.out.println("setOccupied");
-        int x = 0;
-        int y = 0;
-        Grid instance = null;
-        instance.setOccupied(x, y);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Grid grid = new Grid(5);
+        
+        grid.getCells()[1][4].setOccupied(true);
+        grid.getCells()[4][1].setOccupied(false);
+        assertTrue(grid.getCells()[1][4].isOccupied());
+        assertFalse(grid.getCells()[4][1].isOccupied());
     }
 
     /**
@@ -153,13 +111,12 @@ public class GridTest {
     @Test
     public void testSetShip() {
         System.out.println("setShip");
-        int x = 0;
-        int y = 0;
-        Ship ship = null;
-        Grid instance = null;
-        instance.setShip(x, y, ship);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Grid grid = new Grid(5);
+        
+        grid.setShip(1, 4, new Ship("Ship", 4, new Cell[4])); 
+        
+        assertEquals("Ship",grid.getCells()[1][4].getShip().getType());
+        assertEquals(4,grid.getCells()[1][4].getShip().getLength());
     }
 }
 
